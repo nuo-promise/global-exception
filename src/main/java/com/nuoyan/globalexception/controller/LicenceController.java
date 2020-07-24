@@ -16,9 +16,9 @@ import java.util.List;
 @RequestMapping(value = "/api")
 public class LicenceController {
     @PostMapping("/user")
-    public boolean insert(@RequestBody User user) {
+    public boolean insert(@RequestBody @Valid User user) {
         log.info("开始新增用户.. {}",user.toString());
-        ResponseEnum.LICENCE_NOT_FOUND.assertNotNull(user.getName(),"用户传递参数:", user.toString());
+//        ResponseEnum.LICENCE_NOT_FOUND.assertNotNull(user.getName(),"用户传递参数:", user.toString());
         return true;
     }
     @PutMapping("/user")
